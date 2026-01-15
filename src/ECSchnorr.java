@@ -30,16 +30,16 @@ public class ECSchnorr {
 
         BigInteger n = ecSpec.getN();
 
-        // 1. k aleator
+        // k aleator
         BigInteger k = new BigInteger(n.bitLength(), random).mod(n);
 
-        // 2. R = kG
+        // R = kG
         ECPoint R = ecSpec.getG().multiply(k).normalize();
 
-        // 3. e = H(R || m)
+        // e = H(R || m)
         BigInteger e = hash(R, message);
 
-        // 4. s = k + e*x mod n
+        // s = k + e*x mod n
         BigInteger s = k.add(e.multiply(keyPair.privateKey)).mod(n);
 
         return new SignatureData(R, s);
@@ -59,6 +59,7 @@ public class ECSchnorr {
         // R + eP
         ECPoint right = sig.R.add(publicKey.multiply(e)).normalize();
 
+        // sG = R + eP
         return left.equals(right);
     }
 
