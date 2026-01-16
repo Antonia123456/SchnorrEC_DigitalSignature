@@ -27,5 +27,11 @@ public class Main {
         boolean valid = schnorr.verify(msgBytes, sig, keyPair.publicKey);
 
         System.out.println("Semnatura valida: " + valid);
+
+        int iterations = 1000;
+
+        BenchmarkECSchnorr.runBenchmark(iterations);
+        BenchmarkECDSA.runBenchmark(iterations);
+        BenchmarkRSA.runBenchmark(iterations);
     }
 }
