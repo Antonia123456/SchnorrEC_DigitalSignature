@@ -8,7 +8,7 @@ public class BenchmarkRSA {
 
         // Generare chei RSA 2048
         KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
-        kpg.initialize(2048);
+        kpg.initialize(3072);
         KeyPair keyPair = kpg.generateKeyPair();
 
         Signature rsaSign = Signature.getInstance("SHA256withRSA");
@@ -43,7 +43,7 @@ public class BenchmarkRSA {
             verifyTime += (end - start);
         }
 
-        System.out.println("=== RSA-2048 Benchmark ===");
+        System.out.println("=== RSA-3072 Benchmark ===");
         System.out.println("Iteratii: " + iterations);
         System.out.println("Timp mediu semnare (ms): " + (signTime / iterations) / 1_000_000.0);
         System.out.println("Timp mediu verificare (ms): " + (verifyTime / iterations) / 1_000_000.0);
