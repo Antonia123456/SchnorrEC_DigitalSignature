@@ -1,9 +1,6 @@
 import java.security.Security;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
-/**
- * Test semnare și verificare EC-Schnorr
- */
 public class Main {
 
     static {

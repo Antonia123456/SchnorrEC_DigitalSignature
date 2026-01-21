@@ -17,10 +17,10 @@ public class ECKeyPair {
         SecureRandom random = new SecureRandom();
         BigInteger n = ecSpec.getN();
 
-        // cheie privată x ∈ [1, n-1]
+        // cheie privată d ∈ [1, n-1]
         this.privateKey = new BigInteger(n.bitLength(), random).mod(n);
 
-        // cheie publică P = xG
+        // cheie publică P = dG
         this.publicKey = ecSpec.getG().multiply(privateKey).normalize();
     }
 }

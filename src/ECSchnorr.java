@@ -39,7 +39,7 @@ public class ECSchnorr {
         // e = H(R || m)
         BigInteger e = hash(R, message);
 
-        // s = k + ex mod n
+        // s = k + ed mod n
         BigInteger s = k.add(e.multiply(keyPair.privateKey)).mod(n);
 
         return new SignatureData(R, s);
