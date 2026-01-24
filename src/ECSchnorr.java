@@ -59,7 +59,7 @@ public class ECSchnorr {
         // R + eP
         ECPoint right = sig.R.add(publicKey.multiply(e)).normalize();
 
-        // sG = (k+ex)G = kG+e(xG) = R+eP
+        // sG = (k+ed)G = kG+e(dG) = R+eP
         return left.equals(right);
     }
 
