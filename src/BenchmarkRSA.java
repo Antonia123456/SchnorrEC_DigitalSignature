@@ -6,7 +6,7 @@ public class BenchmarkRSA {
 
     public static void runBenchmark(int iterations) throws Exception {
 
-        // Generare chei RSA 2048
+        // Generare chei RSA 3072
         KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
         kpg.initialize(3072);
         KeyPair keyPair = kpg.generateKeyPair();

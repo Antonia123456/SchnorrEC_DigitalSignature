@@ -6,7 +6,7 @@ import org.bouncycastle.jce.spec.ECParameterSpec;
 import org.bouncycastle.math.ec.ECPoint;
 
 /**
- * Generează perechea de chei EC pentru Schnorr
+ * Generează perechea de chei pentru EC Schnorr
  */
 public class ECKeyPair {
 
